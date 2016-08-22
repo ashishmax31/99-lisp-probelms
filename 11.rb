@@ -6,7 +6,11 @@ def encode_pack(s,packed_array)
 		end
 		if s[i]!=s[i+1]
 			sub_array<<s[i]
-			packed_array<< ["#{sub_array.length} #{sub_array[0].upcase}"]
+			if sub_array.length==1
+				packed_array<<s[i].upcase 
+			else
+				packed_array<< ["#{sub_array.length} #{sub_array[0].upcase}"]
+			end
 			sub_array=[]
 		end
 	end
